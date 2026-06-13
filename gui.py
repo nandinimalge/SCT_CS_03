@@ -28,6 +28,27 @@ special_label.pack()
 result_label = Label(root, text="")
 result_label.pack(pady=20)
 
+show_var = IntVar()
+
+
+def show_password():
+
+    if show_var.get() == 1:
+        password_entry.config(show="")
+    else:
+        password_entry.config(show="*")
+
+show_checkbox = Checkbutton(
+    root,
+    text="Show Password",
+    variable=show_var,
+    font =("Arial",10),
+    command=show_password
+)
+
+show_checkbox.pack(pady=5)
+
+
 def check_password():
     password = password_entry.get()
 
